@@ -1,0 +1,16 @@
+-- POSTS
+
+-- SCHEMA
+CREATE SCHEMA blog;
+
+-- POSTS
+CREATE TABLE blog.posts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    thumbnail_url TEXT,
+    content BYTEA NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP WITH TIME ZONE DEFAULT NULL
+);
